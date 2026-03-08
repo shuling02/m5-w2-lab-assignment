@@ -2,9 +2,65 @@
   text-align: center;
 }
 
+h2 {
+  padding: 15px 20px;
+  margin: 0;
+}
+
+.header {
+  background: #10caf0;
+  padding: 15px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.product-card {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0 15px 50px;
+}
+
+.product-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-row img {
+  width: 90px;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.value {
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.label {
+  color: gray;
+  font-size: 14px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
