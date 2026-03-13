@@ -10,7 +10,9 @@ const navbar = ({ totalItems }) => {
         <div className="header">
 
             <Link to="/" className="logo-link">
-                <h2>Shop to React</h2>
+                <h2 className="logo-text">
+                    Shop 2 <span className="logo-r">R</span>eact
+                </h2>
             </Link>
             
             <Link to="/cart" className="cart">

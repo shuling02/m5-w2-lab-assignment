@@ -182,18 +182,60 @@ h2 {
 }
 
 .header {
-  background: #10caf0;
-  padding: 15px 20px;
+  background: #27b0c6;
+  padding: 15px 25px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.logo-link{
+  text-decoration: none;
+}
+
+.logo-link h2{
+  margin: 0;
+  color: white;
+  font-weight: 500;
+}
+
+.logo-text{
+  margin: 0;
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.logo-r{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.2em;
+  height: 1.2em;
+
+  border-radius: 50%;
+  background: white;
+
+  color: #27b0c6;
+  font-eight: bold;
+  font-size: 1em;
+
+  margin: 0 1px;
+}
+
 .cart {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+
+  text-decoration: none;
+  color: white;
+}
+
+.cart span{
+  font-size: 14px;
 }
 
 
