@@ -1,11 +1,10 @@
 import React from "react";
 import DisplayProducts from "./displayProducts";
 
-const Home = ({ products, openModal, handleAdd, handleSubtract }) => {
+const Home = ({ products, handleAdd, handleSubtract }) => {
     return (
         <DisplayProducts
             products={products}
-            openModal={openModal}
             handleAdd={handleAdd}
             handleSubtract={handleSubtract}
         />

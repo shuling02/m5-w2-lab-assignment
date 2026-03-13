@@ -1,7 +1,19 @@
 import './App.css';
-import React, { Component } from "react";
+import React from "react";
+import { useState } from "react";
+import { Modal } from 'react-bootstrap'
 
-const displayProducts = ({ products, openModal, handleAdd, handleSubtract }) => {
+const DisplayProducts = ({ products, handleAdd, handleSubtract }) => {
+    
+    const [show, setShow] = useState(false);
+    const [showImge, setShowImge] = useState({});
+
+    const handleClose = () => setShow(false);
+    const handleShow = (product) => {
+        setShow(true);
+        setShowImge(product);
+    }
+
     return (
 
         <>
@@ -13,7 +25,7 @@ const displayProducts = ({ products, openModal, handleAdd, handleSubtract }) => 
                         <img 
                             src={p.img} 
                             alt={p.name} 
-                            onClick={() => openModal(p)}
+                            onClick={() => handleShow(p)}
                             style={{ cursor: "pointer" }}
                         />
 
@@ -45,8 +57,23 @@ const displayProducts = ({ products, openModal, handleAdd, handleSubtract }) => 
                     </div>
                 </div>
             ))}
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{showImge.name}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body> 
+                    <img
+                        src={showImge.img}
+                        width="350"
+                        alt={showImge.name}
+                        className="mx-5"
+                    />
+                    <p><span className="text-dark">Ratings:</span> {showImge.rating}/5</p>
+                </Modal.Body>
+            </Modal>
         </>
     );
 };
 
-export default displayProducts;
+export default DisplayProducts;

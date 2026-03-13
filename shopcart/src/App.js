@@ -18,10 +18,11 @@ class App extends Component {
 
     this.state = {
       images: productsData,
-      activeProduct: null
+      //activeProduct: null
     };
   }
 
+  /*
   openModal = (product) => {
     this.setState({ activeProduct: product });
   };
@@ -29,6 +30,7 @@ class App extends Component {
   closeModal = () => {
     this.setState({ activeProduct: null });
   };
+  */
 
   handleAdd = (id) => {
     const updatedProducts = this.state.images.map(p => {
@@ -69,7 +71,6 @@ class App extends Component {
             element={
               <Home 
                 products={this.state.images}
-                openModal={this.openModal} 
                 handleAdd={this.handleAdd}
                 handleSubtract={this.handleSubtract}
               />
@@ -83,29 +84,6 @@ class App extends Component {
         
         </Routes>
 
-        {this.state.activeProduct && (
-          <div className="modal-overlay" onClick={this.closeModal}>
-            <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-              <button className="close-btn" onClick={this.closeModal}>X</button>
-
-              <h5 className="modal-title">
-                {this.state.activeProduct.name}
-              </h5>
-
-              <img  
-                src={this.state.activeProduct.img}
-                alt=""
-                className="modal-img"
-              />
-
-              <p className="modal-desc">{this.state.activeProduct.desc}</p>
-              <p className="modal-rating">
-                Ratings: {this.state.activeProduct.rating}/5
-              </p>
-
-            </div>
-          </div>
-        )}
       </BrowserRouter>
 
 
